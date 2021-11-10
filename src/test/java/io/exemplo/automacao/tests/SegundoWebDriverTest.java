@@ -9,13 +9,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(WebDriverExtension.class)
 public class SegundoWebDriverTest {
 
     @Test
-    public void segundaAula(WebDriver webDriver) {
+    public void segundaAulaPrimeiroExercicio(WebDriver webDriver) {
         webDriver.get("https://matheusbeoulve.github.io/aulas/aula2/");
 
         webDriver.findElement(By.linkText("Carro")).click();
@@ -34,6 +34,21 @@ public class SegundoWebDriverTest {
         String mensagem = webDriver.findElement(By.cssSelector("#confirmar-dados")).getText();
 
         assertEquals("Obrigado, Matheus Henrique G Santos pelo seu pedido!", mensagem);
+    }
+
+    @Test
+    public void segundaAulaSegundoExercicio(WebDriver webDriver) {
+        webDriver.get("https://matheusbeoulve.github.io/aulas/aula2/");
+
+        webDriver.findElement(By.linkText("Carro")).click();
+
+        WebElement usouSeguroCarro = webDriver.findElement(By.cssSelector("#usou-seguro-carro"));
+
+        assertFalse(usouSeguroCarro.isEnabled());
+
+        webDriver.findElement(By.cssSelector("#carro-assegurado")).click();
+
+        assertTrue(usouSeguroCarro.isEnabled());
     }
 
     @Test
