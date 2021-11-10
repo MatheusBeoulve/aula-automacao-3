@@ -1,7 +1,6 @@
 package io.exemplo.automacao.tests;
 
 import io.exemplo.automacao.extensions.WebDriverExtension;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.By;
